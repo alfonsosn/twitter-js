@@ -10,10 +10,10 @@ var swig = require('swig');
 // connect Morgan to our app
 app.use(morgan('dev'));
 
-app.engine('swig', swig.renderFile);
+app.engine('html', swig.renderFile);
 
 // set default engine to HTML
-app.set('view engine');
+app.set('view engine', 'html');
 
 // set views path to our view folder
 app.set('views', process.cwd() + '/views');
