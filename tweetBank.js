@@ -1,6 +1,7 @@
 var _ = require('underscore');
 
-var data = [];
+var data = [{name: 'Dave', text: 'Yo'}, 
+			{name: 'Nimit', text: 'hsg'}];
 
 
 
@@ -22,23 +23,25 @@ var find = function (properties) {
 module.exports = { add: add, list: list, find: find };
 
 
-var randArrayEl = function(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-};
+// var randArrayEl = function(arr) {
+//   return arr[Math.floor(Math.random() * arr.length)];
+// };
 
-var getFakeName = function() {
-  var fakeFirsts = ['Nimit', 'Dave', 'Will', 'Charlotte', 'Jacob','Ethan','Sophia','Emma','Madison'];
-  var fakeLasts = ["Alley", 'Stacky', 'Fullstackerson', 'Nerd', 'Ashby', 'Gatsby', 'Hazelnut', 'Cookie', 'Tilde', 'Dash'];
-  return randArrayEl(fakeFirsts) + " " + randArrayEl(fakeLasts);
-};
+// var getFakeName = function() {
+//   var fakeFirsts = ['Nimit', 'Dave', 'Will', 'Charlotte', 'Jacob','Ethan','Sophia','Emma','Madison'];
+//   var fakeLasts = ["Alley", 'Stacky', 'Fullstackerson', 'Nerd', 'Ashby', 'Gatsby', 'Hazelnut', 'Cookie', 'Tilde', 'Dash'];
+//   return randArrayEl(fakeFirsts) + " " + randArrayEl(fakeLasts);
+// };
 
-var getFakeTweet = function() {
-  var awesome_adj = ['awesome','breathtaking','amazing','sexy','sweet','cool','wonderful','mindblowing'];
-  return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
-};
+// var getFakeTweet = function() {
+//   var awesome_adj = ['awesome','breathtaking','amazing','sexy','sweet','cool','wonderful','mindblowing'];
+//   return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
+// };
 
 for(var i=0; i<10; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+  // module.exports.add( getFakeName(), getFakeTweet() );
+  // module.exports.list();
+  
 }
 
-console.log(data);
+// console.log(module.exports.find({text: 'Yo'}))
