@@ -1,18 +1,36 @@
 var express = require('express');
 var app = express();
 var morgan = require('morgan');
+var swig = require('swig');
 
 
 // connect Morgan to our app
 app.use(morgan('dev'));
 
+app.engine('swig', swig.renderFile);
+
+// set default engine to HTML
+app.set('view engine');
+
+// set views path to our view folder
+app.set('views', process.cwd() + '/views');
+
+// turn off caching
+swig.setDefaults({ cache: false });
+
+
+
+
+
 app.get('/', function (req, res) {
-  res.send('hello, world!')
+  // res.send('hello, world!')
+  var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+	res.render( 'index', {title: 'Hall of Fame', people: people} );
 })
 
-app.get('/news', function(req, res) {
-	res.send('these are the news');
-})
+// app.get('/news', function(req, res) {
+// 	res.send('these are the news');
+// })
 
 
 
